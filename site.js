@@ -53,13 +53,33 @@ function modalActivate() {
     modal.style.display = "block";
 }
 
+function closeAllPledgeTabs() {
+    noRewardButton.style.borderColor = "#9c9c9c"
+    bambooStandButton.style.borderColor = "#9c9c9c"
+    blackStandButton.style.borderColor = "#9c9c9c"
+
+    noRewardButton.style.borderWidth = "1px"
+    bambooStandButton.style.borderWidth = "1px"
+    blackStandButton.style.borderWidth = "1px"
+
+    noRewardButton.querySelector('.selectedCircle').style.display = "none"
+    bambooStandButton.querySelector('.selectedCircle').style.display = "none"
+    blackStandButton.querySelector('.selectedCircle').style.display = "none"
+
+    noRewardButton.querySelector('.pledgeSection').style.display = "none"
+    bambooStandButton.querySelector('.pledgeSection').style.display = "none"
+    blackStandButton.querySelector('.pledgeSection').style.display = "none"
+}
+
 function closeModal() {
     modal.style.display = "none";
+    closeAllPledgeTabs()
 }
 
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
+        closeAllPledgeTabs()
     }
 }
 
@@ -124,6 +144,9 @@ function blackStandPledge() {
 function completePledge() {
     if (pledgeReward == "none") {
         var amountPledged = noRewardButton.getElementsByTagName('input')[0].value
+        if (Number(amountPledged) < 1) {
+            return
+        }
         amountBacked += Number(amountPledged)
         totalBackers += 1
         document.querySelector('#totalPledgeAmount').innerHTML = "$" + String(amountBacked).replace(/(.)(?=(\d{3})+$)/g,'$1,')

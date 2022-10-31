@@ -381,32 +381,32 @@ body {
         font-size: 15px;
     }
 
-    #rewardName {
+    .rewardName {
         font-size: 22px;
     }
 
-    #pledgeAmount {
+    .pledgeAmount {
         font-size: 13px;
     }
 
-    #rewardDesc {
+    .rewardDesc {
         font-size: 16px;
     }
 
-    #noLeft {
+    .noLeft {
         font-size: 20px;
     }
 
-    #leftIGuess {
+    .leftIGuess {
         font-size: 15px;
     }
 
-    #rewardText {
-        font-size: 17px;
+    .rewardText {
+        font-size: 15px;
         text-align: center;
     }
 
     .selectReward {
-        width: 20%;
+        padding: 3px;
     }
 }

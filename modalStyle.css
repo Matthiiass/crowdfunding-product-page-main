@@ -45,6 +45,7 @@
 .modalPledgeContainer {
     display: flex;
     flex-direction: row;
+    cursor: pointer;
 }
 
 .modalPledgeTitle {
@@ -168,4 +169,14 @@
     font-weight: 300;
     font-size: 14px;
     color: #9c9c9c;
+}
+
+#out {
+    cursor: default;
+}
+
+@media (max-width: 700px) {
+    .modalContent {
+        width: 80%;
+    }
 }
